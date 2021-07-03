@@ -1,12 +1,8 @@
 name: Actions Workflow
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    types: [closed, assigned, opened, reopened]
-
+  schedule:
+    - cron: "0 18 * * 6" # “At 18:00 on Saturday.”
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
